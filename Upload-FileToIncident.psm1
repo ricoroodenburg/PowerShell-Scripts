@@ -58,9 +58,9 @@ $fileContent
         } Catch {
 
             # Error...
-            Write-Debug ("$(Get-TimeStamp) >> Error while adding a new incident within TOPdesk, see error code below..")
-            Write-Debug ("$(Get-TimeStamp) StatusCode:" + $_.Exception.Response.StatusCode.value__ )
-            Write-Debug ("$(Get-TimeStamp) StatusDescription:" + $_.Exception.Response.StatusDescription)
+            Write-Debug (">> Error while adding a new incident within TOPdesk, see error code below..")
+            Write-Debug ("StatusCode:" + $_.Exception.Response.StatusCode.value__ )
+            Write-Debug ("StatusDescription:" + $_.Exception.Response.StatusDescription)
             Write-Error $_
             Throw
 
