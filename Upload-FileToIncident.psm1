@@ -122,9 +122,9 @@ Function Upload-FolderToTopdesk {
 
         # Zet headers klaar
         $Headers = @{
-            Authorization = "Basic " + [System.Convert]::ToBase64String(
-                [System.Text.Encoding]::ASCII.GetBytes("$Username:$ApplicationPassword")
-            )
+        
+            Authorization = "Basic " + [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes("$($Username):$($ApplicationPassword)"))
+            
         }
 
         # Maak multipart-form body
