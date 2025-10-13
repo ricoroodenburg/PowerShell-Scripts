@@ -144,12 +144,7 @@ $FileContent
     Process {
 
         Try {
-            Invoke-RestMethod -Uri "$URL/tas/api/incidents/number/$IncidentNumber/attachments" `
-                -Headers $Headers `
-                -Method Post `
-                -Body $Body `
-                -ContentType "multipart/form-data; boundary=BOUNDARY"
-
+            Invoke-RestMethod -Uri ($URL + "/tas/api/incidents/number/$IncidentNumber/attachments") -Headers $Headers -Method Post -Body $body -ContentType "multipart/form-data; boundary=BOUNDARY"
             Write-Output "✅ Upload succesvol uitgevoerd."
 
         }
